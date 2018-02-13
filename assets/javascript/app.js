@@ -1,34 +1,4 @@
 (function() {
-    console.log("js file");
-    // var questionAnswerArray = [
-    //     { qAndA1: {
-    //         question1: "In which year did Green Day release the album 'Dookie'?",
-    //         q1AnswerA: "1994",
-    //         q1AnswerB: "1995",
-    //         q1AnswerC: "1996",
-    //         q1AnswerD: "1997"
-    //         }
-    //     },
-    //     { qAndA2: {
-    //         question2: "The album 'Parklife' by Blur was first released in which year?",
-    //         q2AnswerA: "1993",
-    //         q2AnswerB: "1994",
-    //         q2AnswerC: "1995",
-    //         q2AnswerD: "1996"
-    //         }
-    //     },
-    // ];
-
-    // var questionAnswerArray = [
-    //     {
-    //         question: ["In which year did Green Day release the album 'Dookie'?",
-    //         "The album 'Parklife' by Blur was first released in which year?",],
-    //         q1AnswerA: ["1994", "1993"],
-    //         q1AnswerB: ["1995", "1994"],
-    //         q1AnswerC: ["1996", "1995"],
-    //         q1AnswerD: ["1997", "1996"]
-    //     }
-    // ];
 
     var question = ["In which year did Green Day release the album 'Dookie'?",
             "The album 'Parklife' by Blur was first released in which year?",
@@ -56,6 +26,7 @@
     var clickedAnswer;
     var answeredCorrectly = 0;
     var answeredWrong = 0;
+    var timeUp = false;
 
     function startGame() {
         $("#timer").text(timer);
@@ -66,34 +37,7 @@
     }
         
     function selectQandA() {
-        //for (var i=0; i<questionAnswerArray.length; i++) {
-           // console.log("array length: " + questionAnswerArray.length);
-            
-            // $("#question").text(questionAnswerArray[i].qAndA1.question1);
-            // $("#answer-a").text(questionAnswerArray[i].qAndA1.q1AnswerA);
-            // $("#answer-b").text(questionAnswerArray[i].qAndA1.q1AnswerB);
-            // $("#answer-c").text(questionAnswerArray[i].qAndA1.q1AnswerC);
-            // $("#answer-d").text(questionAnswerArray[i].qAndA1.q1AnswerD);
-        //}
-        // for (var q=0; q<QandAindex; q++) {
-        //     $("#question").text(question[q]);
-        // }
-        // for (var a=0; a<AnswerA.length; a++) {
-        //     $("#answer-a").text(AnswerA[a]);
-        // }
-        // for (var b=0; b<AnswerB.length; b++) {
-        //     $("#answer-b").text(AnswerB[b]);
-        // }
-        // for (var c=0; c<AnswerC.length; c++) {
-        //     $("#answer-c").text(AnswerC[c]);
-        // }
-        // for (var d=0; d<AnswerD.length; d++) {
-        //     $("#answer-d").text(AnswerD[d]);
-        // }
-        // for (var x=0; x<AnswerD.length; x++) {
-        //     answer = correctAnswer[x];
-        // }
-        $("#question").text(question[QandAindex]);
+        $("#question").html("<p>" + question[QandAindex] + "</p>");
         $("#answer-a").text(AnswerA[QandAindex]);
         $("#answer-b").text(AnswerB[QandAindex]);
         $("#answer-c").text(AnswerC[QandAindex]);
@@ -114,7 +58,10 @@
             timer--;
             $("#timer").text(timer);
             if (timer <= 0) {
+                timeUp = true;
+                clickedAnswer = "z";
                 stopTimer();
+                chosenAnswer();
             }
         }
     }
@@ -133,8 +80,13 @@
         }
         else {
             //wrong answer logic
-            $("#answer-yes-no").text("THAT IS WRONG!!!").css({"color": "#ff0000"});
+            if (timeUp) {
+                $("#answer-yes-no").text("TIME IS UP").css({"color" : "#ff0000"});
+            } else {
+                $("#answer-yes-no").text("THAT IS WRONG!!!").css({"color": "#ff0000"});
+            }
             answeredWrong++;
+            timeUp = false;
         }
         stopTimer();
         $(".question-answer").hide();
@@ -148,6 +100,24 @@
             $("#correct-answer").text(AnswerC[QandAindex]);
         } else if (answer === "d") {
             $("#correct-answer").text(AnswerD[QandAindex]);
+        }
+
+        if (QandAindex === 0) {
+            $("#answer-gif").attr("src", "assets/images/green_day.gif").css({"height" : "159", "width" : "300"});
+        } else if (QandAindex === 1) {
+            $("#answer-gif").attr("src", "assets/images/blur.gif").css({"height" : "300", "width" : "300"});
+        } else if (QandAindex === 2) {
+            $("#answer-gif").attr("src", "assets/images/smashing_pumpkins.gif").css({"height" : "169", "width" : "300"});
+        } else if (QandAindex === 3) {
+            $("#answer-gif").attr("src", "assets/images/courtney_love.gif").css({"height" : "190", "width" : "300"});
+        } else if (QandAindex === 4) {
+            $("#answer-gif").attr("src", "assets/images/silver_chair.gif").css({"height" : "217", "width" : "300"});
+        } else if (QandAindex === 5) {
+            $("#answer-gif").attr("src", "assets/images/pusa.gif").css({"height" : "223", "width" : "300"});
+        } else if (QandAindex === 6) {
+            $("#answer-gif").attr("src", "assets/images/seattle.gif").css({"height" : "200", "width" : "300"});
+        } else if (QandAindex === 7) {
+            $("#answer-gif").attr("src", "assets/images/nirvana.gif").css({"height" : "177", "width" : "300"});
         }
 
         answeredWait ();
@@ -187,10 +157,10 @@
     function gameOver() {
 
         $(".gameover-screen").show();
-        $(".game-screen").hide();
+        $(".display-answer").hide();
         $("#correct").text(answeredCorrectly);
         $("#wrong").text(answeredWrong);
-        $("#reset-btn").on("click", function () {
+        $(document).on("click", "#reset-btn" , function() {
             resetGame();
         })
     }
@@ -198,6 +168,7 @@
     function resetGame() {
         $(".gameover-screen").hide();
         $(".game-screen").show();
+        $(".question-answer").show();
         timer = 30;
         QandAindex = 0;
         timerRunning = false;

@@ -20,71 +20,74 @@
                 </section>
 
                 <div class="start-screen">   <!--beginning of start screen-->
-                <section class="row">
-                    <article class="col">
-                        <div class="text-center">
-                            <button type="button" class="btn btn-lg btn-success" id="start-btn">START</button>
-                        </div>
-                    </article>
-                </section>
+                    <section class="row">
+                        <article class="col">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-lg btn-success" id="start-btn">START</button>
+                            </div>
+                        </article>
+                    </section>
                 </div>  <!--end of start screen-->
                 
                 <div class="game-screen display-none">    <!--start of game screen-->
-                <section class="row">
-                    <article class="col">
-                        <div class="text-center" id="time-remain">
-                            <p id="time">Time Remaining: <span id="timer"></span> Seconds</p>
-                        </div>
-                    </article>
-                </section>
+                    <section class="row">
+                        <article class="col">
+                            <div class="text-center" id="time-remain">
+                                <p id="time">Time Remaining: <span id="timer"></span> Seconds</p>
+                            </div>
+                        </article>
+                    </section>
 
-                <div class="question-answer">   <!--start of question & answer-->
-                <section class="row">
-                    <article class="col">
-                        <div class="text-center" id="question">
+                    <div class="question-answer">   <!--start of question & answer-->
+                        <section class="row">
+                            <article class="col">
+                                <div class="text-center" id="question">
 
-                        </div>
-                    </article>
-                </section>
+                                </div>
+                            </article>
+                        </section>
 
-                <section class="row">
-                    <article class="col">
-                        <div class="text-center all-answers" id="answers-a" value="a">
-                            <p>A) <span id="answer-a"></span></p>
-                        </div>
-                    </article>
-                </section>
+                        <section class="row">
+                            <article class="col-md-4"></article>
+                            <article class="col-md-4">
+                                <div class="text-center all-answers" id="answers-a" value="a">
+                                    <p>A) <span id="answer-a"></span></p>
+                                </div>
+                            </article>
+                            <article class="col-md-4"></article>
+                        </section>
 
-                <section class="row">
-                    <article class="col">
-                        <div class="text-center all-answers" id="answers-b" value="b">
-                                <p>B) <span id="answer-b"></span></p>
-                        </div>
-                    </article>
-                </section>
+                        <section class="row">
+                            <article class="col">
+                                <div class="text-center all-answers" id="answers-b" value="b">
+                                        <p>B) <span id="answer-b"></span></p>
+                                </div>
+                            </article>
+                        </section>
 
-                <section class="row">
-                    <article class="col">
-                        <div class="text-center  all-answers" id="answers-c" value="c">
-                                <p>C) <span id="answer-c"></span></p>
-                        </div>
-                    </article>
-                </section>
+                        <section class="row">
+                            <article class="col">
+                                <div class="text-center  all-answers" id="answers-c" value="c">
+                                        <p>C) <span id="answer-c"></span></p>
+                                </div>
+                            </article>
+                        </section>
 
-                <section class="row">
-                    <article class="col">
-                        <div class="text-center  all-answers" id="answers-d" value="d">
-                                <p>D) <span id="answer-d"></span></p>
-                        </div>
-                    </article>
-                </section>
-                </div>   <!--end of question & answers-->
+                        <section class="row">
+                            <article class="col">
+                                <div class="text-center  all-answers" id="answers-d" value="d">
+                                        <p>D) <span id="answer-d"></span></p>
+                                </div>
+                            </article>
+                        </section>
+                    </div>   <!--end of question & answers-->
                 </div>   <!--end of game screen-->
 
                 <div class="display-answer display-none">   <!--beginning of display answer screen-->
                     <section class="row">
                         <article class="col">
                             <div class="text-center">
+                                <img id="answer-gif">
                                 <p id="answer-yes-no"></p>
                                 <p id="correct-answer"></p>
                             </div>
@@ -92,12 +95,12 @@
                     </section>
                 </div>  <!--end of display answer screen-->
                 
-                <div class="gamveover-screen display-none">   <!--beginning of restart screen-->
+                <div class="gameover-screen display-none">   <!--beginning of restart screen-->
                     <section class="row">
                         <article class="col">
                             <div class="text-center">
-                                <p>>Number of Correct Answers: <span id="correct"></span></p>
-                                <p>>Number of Wrong Answers: <span id="wrong"></span></p>
+                                <p>Number of Correct Answers: <span id="correct"></span></p>
+                                <p>Number of Wrong Answers: <span id="wrong"></span></p>
                             </div>
                         </article>
                     </section>

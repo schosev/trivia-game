@@ -13,10 +13,11 @@ body {
 .jumbotron {
     width: 80%;
     /*max-height: 400px;*/
-    height: 400px;
+    height: 600px;
     margin: 0 auto 0 auto;
     background-color: rgba(0, 0, 0, .6);
-    color: #33cc33;
+    /*color: #33cc33;*/
+    color : #ffff00;
 }
 
 .display-none {
@@ -25,4 +26,8 @@ body {
 
 #answer-yes-no {
     font-size: 50px;
+}
+
+#answer-gif {
+    
 }
