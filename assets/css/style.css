@@ -12,7 +12,17 @@ body {
 
 .jumbotron {
     width: 80%;
+    /*max-height: 400px;*/
+    height: 400px;
     margin: 0 auto 0 auto;
     background-color: rgba(0, 0, 0, .6);
     color: #33cc33;
+}
+
+.display-none {
+    display: none;
+}
+
+#answer-yes-no {
+    font-size: 50px;
 }
