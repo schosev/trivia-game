@@ -28,6 +28,7 @@
     var answeredWrong = 0;
     var timeUp = false;
 
+    //calls function to get questions and starts the timer
     function startGame() {
         $("#timer").text(timer);
         if (QandAindex <= question.length) {
@@ -36,6 +37,7 @@
         startTimer();
     }
         
+    //selects the question and answers
     function selectQandA() {
         $("#question").html("<p>" + question[QandAindex] + "</p>");
         $("#answer-a").text(AnswerA[QandAindex]);
@@ -45,6 +47,7 @@
         answer = correctAnswer[QandAindex];
     }
 
+    //starts timer for answering questions
     function startTimer() {
         if (!timerRunning) {
             clearInterval(timerInterval);
@@ -71,6 +74,7 @@
         timerRunning = false;
     } 
 
+    //checks to see if answer is correct and display appropriate message, gif and correct answer
     function chosenAnswer() {
         if (clickedAnswer === answer) {
             //correct answer logic
@@ -105,7 +109,7 @@
         if (QandAindex === 0) {
             $("#answer-gif").attr("src", "assets/images/green_day.gif").css({"height" : "159", "width" : "300"});
         } else if (QandAindex === 1) {
-            $("#answer-gif").attr("src", "assets/images/blur.gif").css({"height" : "300", "width" : "300"});
+            $("#answer-gif").attr("src", "assets/images/blur.gif").css({"height" : "200", "width" : "200"});
         } else if (QandAindex === 2) {
             $("#answer-gif").attr("src", "assets/images/smashing_pumpkins.gif").css({"height" : "169", "width" : "300"});
         } else if (QandAindex === 3) {
@@ -123,6 +127,7 @@
         answeredWait ();
     }
 
+    //timer for waiting between questions
     function answeredWait () {
         if (!waitRunning) {;
             waitInterval = clearTimeout(waitInterval);
@@ -137,6 +142,7 @@
         isGameComplete();
     } 
 
+    //checks to see if all questions have been answered and if so end the game
     function isGameComplete() {
         QandAindex++
         if (QandAindex < question.length) {
@@ -146,6 +152,7 @@
         }
     }
 
+    //resets timers and gets the next question
     function nextQuestion() {
         timer = 30;
         waitTimer = 5;
@@ -154,8 +161,8 @@
         startGame();
     }
 
+    //displays the game over screen with stats and reset button
     function gameOver() {
-
         $(".gameover-screen").show();
         $(".display-answer").hide();
         $("#correct").text(answeredCorrectly);
@@ -165,6 +172,7 @@
         })
     }
 
+    //restarts game if reset button is clicked
     function resetGame() {
         $(".gameover-screen").hide();
         $(".game-screen").show();
@@ -179,13 +187,14 @@
         startGame();
     }
 
-
+    //start game after clicking start button
     $("#start-btn").on("click", function () {
         $(".start-screen").hide();
         $(".game-screen").show();
         startGame();
     })
 
+    //logic for clicking on the answer
     $(".all-answers").on("click", function() {
         clickedAnswer = ($(this).attr("value"));
         chosenAnswer();

@@ -13,7 +13,7 @@
     <body>
         <main role="main" class="container-fluid">
             <div class="jumbotron">
-                <section class="row">
+                <section class="row"> 
                     <article class="col">
                         <h2 class="text-center">90's Alternative Music Trivia Game</h2>
                     </article>
@@ -22,7 +22,7 @@
                 <div class="start-screen">   <!--beginning of start screen-->
                     <section class="row">
                         <article class="col">
-                            <div class="text-center">
+                            <div class="text-center" id="start-btn-div">
                                 <button type="button" class="btn btn-lg btn-success" id="start-btn">START</button>
                             </div>
                         </article>
@@ -48,50 +48,59 @@
                         </section>
 
                         <section class="row">
-                            <article class="col-md-4"></article>
-                            <article class="col-md-4">
-                                <div class="text-center all-answers" id="answers-a" value="a">
+                            <article class="col-md-4 col-sm-2 col-xs-1"></article>
+                            <article class="col-md-4 col-sm-8 col-xs-10">
+                                <div class="all-answers" id="answers-a" value="a">
                                     <p>A) <span id="answer-a"></span></p>
                                 </div>
                             </article>
-                            <article class="col-md-4"></article>
+                            <article class="col-md-4 col-sm-2 col-xs-1"></article>
                         </section>
 
                         <section class="row">
-                            <article class="col">
-                                <div class="text-center all-answers" id="answers-b" value="b">
+                            <article class="col-md-4 col-sm-2 col-xs-1"></article>
+                            <article class="col-md-4 col-sm-8 col-xs-10">
+                                <div class="all-answers" id="answers-b" value="b">
                                         <p>B) <span id="answer-b"></span></p>
                                 </div>
                             </article>
+                            <article class="col-md-4 col-sm-2 col-xs-1"></article>
                         </section>
 
                         <section class="row">
-                            <article class="col">
-                                <div class="text-center  all-answers" id="answers-c" value="c">
+                            <article class="col-md-4 col-sm-2 col-xs-1"></article>
+                            <article class="col-md-4 col-sm-8 col-xs-10">
+                                <div class="all-answers" id="answers-c" value="c">
                                         <p>C) <span id="answer-c"></span></p>
                                 </div>
                             </article>
+                            <article class="col-md-4 col-sm-2 col-xs-1"></article>
                         </section>
 
                         <section class="row">
-                            <article class="col">
-                                <div class="text-center  all-answers" id="answers-d" value="d">
+                            <article class="col-md-4 col-sm-2 col-xs-1"></article>
+                            <article class="col-md-4 col-sm-8 col-xs-10">
+                                <div class="all-answers" id="answers-d" value="d">
                                         <p>D) <span id="answer-d"></span></p>
                                 </div>
                             </article>
+                            <article class="col-md-4 col-sm-2 col-xs-1"></article>
                         </section>
                     </div>   <!--end of question & answers-->
                 </div>   <!--end of game screen-->
 
                 <div class="display-answer display-none">   <!--beginning of display answer screen-->
                     <section class="row">
-                        <article class="col">
+                        <!---<article class="col">-->
+                        <article class="col-md-4 col-sm-2 col-xs-1"></article>
+                        <article class="col-md-4 col-sm-8 col-xs-10">
                             <div class="text-center">
-                                <img id="answer-gif">
+                                <img class="img-responsive mx-auto d-block" id="answer-gif">
                                 <p id="answer-yes-no"></p>
                                 <p id="correct-answer"></p>
                             </div>
                         </article>
+                        <article class="col-md-4 col-sm-2 col-xs-1"></article>
                     </section>
                 </div>  <!--end of display answer screen-->
                 

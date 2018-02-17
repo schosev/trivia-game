@@ -12,12 +12,15 @@ body {
 
 .jumbotron {
     width: 80%;
-    /*max-height: 400px;*/
     height: 600px;
     margin: 0 auto 0 auto;
     background-color: rgba(0, 0, 0, .6);
-    /*color: #33cc33;*/
     color : #ffff00;
+}
+
+#start-btn-div {
+    height: 490px;
+    line-height: 490px;
 }
 
 .display-none {
@@ -28,6 +31,32 @@ body {
     font-size: 50px;
 }
 
-#answer-gif {
-    
+.all-answers:hover {
+    cursor: pointer;
+    background-color: #000000;
+}
+
+#start-btn-div#start-btn {
+    vertical-align: middle;
+}
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+    #answer-yes-no {
+        font-size: 30px;
+    }
+}
+
+/* sm */
+@media screen and (min-width: 768px) {
+    #answer-yes-no {
+        font-size: 40px;
+    }
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+    #answer-yes-no {
+        font-size: 50px;
+    }
 }
